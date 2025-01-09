@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>25 Años de Amor - Bodas de Plata</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&family=Great+Vibes&family=Cormorant+Garamond:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Cormorant Garamond', serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #f5f5f5 0%, #e0e0e0 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #333;
+        }
+        
+        .container {
+            max-width: 600px;
+            margin: 20px;
+            padding: 60px 40px;
+            background-color: rgba(255, 255, 255, 0.95);
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            border: 1px solid rgba(192, 192, 192, 0.3);
+        }
+
+        .container::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 5px;
+            background: linear-gradient(90deg, #C0C0C0, #E8E8E8, #C0C0C0);
+        }
+        
+        .header {
+            margin-bottom: 40px;
+            position: relative;
+        }
+        
+        .title {
+            font-family: 'Great Vibes', cursive;
+            font-size: 48px;
+            margin-bottom: 20px;
+            color: #666;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+        }
+        
+        .subtitle {
+            font-size: 22px;
+            color: #888;
+            margin-bottom: 20px;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 300;
+            letter-spacing: 2px;
+        }
+
+        .elegant-text {
+            font-size: 20px;
+            line-height: 1.6;
+            color: #666;
+            margin: 25px 0;
+        }
+        
+        .names-container {
+            position: relative;
+            margin: 30px auto;
+            padding: 40px 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 300px;  /* Aumentado */
+            width: 400px;       /* Aumentado */
+            max-width: 400px;   /* Aumentado */
+        }
+
+        .background-image {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 100%;
+            height: auto;
+            max-width: 400px;   /* Aumentado */
+            min-width: 400px;   /* Aumentado */
+            opacity: 0.2;
+            z-index: 1;
+            object-fit: contain;
+        }
+
+        .names-wrapper {
+            position: relative;
+            z-index: 2;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            align-items: center;
+            width: 100%;
+            padding: 20px;
+        }
+
+        .name {
+            font-family: 'Great Vibes', cursive;
+            font-size: 60px;
+            background: linear-gradient(45deg, #808080, #C0C0C0);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin: 0;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+            line-height: 1.2;
+        }
+
+        .name-separator {
+            font-family: 'Great Vibes', cursive;
+            font-size: 42px;
+            color: #C0C0C0;
+            margin: 5px 0;
+        }
+
+        .decoration-image {
+            max-width: 250px;
+            margin: 30px 0;
+            opacity: 0.8;
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+
+        img[src="dyk3.png"] {
+            border-radius: 0;
+            box-shadow: none;
+        }
+
+        .decoration-image-bottom {
+            max-width: 280px;
+            margin: 30px auto;
+            opacity: 0.8;
+            display: block;
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+
+        .countdown {
+            background: none;
+            padding: 20px;
+            margin: 40px 0;
+            color: #888;
+            box-shadow: none;
+            border: none;
+        }
+
+        .countdown-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 15px;
+            max-width: 400px;
+            margin: 0 auto;
+        }
+
+        .countdown-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .countdown-number {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 36px;
+            font-weight: 300;
+            color: #A8A8A8;
+            margin-bottom: 5px;
+        }
+
+        .countdown-label {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: #BEBEBE;
+        }
+
+        .countdown-separator {
+            width: 30px;
+            height: 1px;
+            background-color: #E5E4E2;
+            margin: 10px auto;
+        }
+        
+        .location-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 12px 25px;
+            background: #fff;
+            color: #666;
+            text-decoration: none;
+            border-radius: 25px;
+            transition: all 0.3s ease;
+            font-size: 16px;
+            margin-top: 30px;
+            border: 1px solid #ddd;
+            cursor: pointer;
+            font-family: 'Montserrat', sans-serif;
+            letter-spacing: 1px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+        }
+
+        .location-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            background: #f9f9f9;
+        }
+
+        .date-time {
+            margin: 30px 0;
+            color: #666;
+            font-size: 22px;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 300;
+        }
+
+        .separator {
+            width: 100px;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, #C0C0C0, transparent);
+            margin: 30px auto;
+        }
+
+        .ornament {
+            font-size: 24px;
+            color: #C0C0C0;
+            margin: 20px 0;
+        }
+
+        .details {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 16px;
+            color: #888;
+            margin: 15px 0;
+            font-weight: 300;
+        }
+
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .image-scale {
+            opacity: 0;
+            transform: scale(0.95);
+            transition: all 1s ease;
+        }
+
+        .image-scale.visible {
+            opacity: 1;
+            transform: scale(1);
+        }
+
+        .text-slide {
+            opacity: 0;
+            transform: translateX(-30px);
+            transition: all 0.8s ease;
+        }
+
+        .text-slide.visible {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        .image-scale-up {
+            opacity: 0;
+            transform: scale(0.95) translateY(20px);
+            transition: all 1.2s ease;
+        }
+
+        .image-scale-up.visible {
+            opacity: 1;
+            transform: scale(1) translateY(0);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header fade-in">
+            <div class="ornament">❦</div>
+            <h1 class="title">Bodas de Plata</h1>
+            <div class="separator"></div>
+            <p class="subtitle">CELEBRACIÓN DE 25 AÑOS DE AMOR</p>
+            
+            <div class="names-container fade-in">
+                <img src="dyk.png" alt="Fondo" class="background-image image-scale">
+                <div class="names-wrapper">
+                    <span class="name">Kesia</span>
+                    <span class="name-separator">&</span>
+                    <span class="name">Dustin</span>
+                </div>
+            </div>
+        </div>
+        
+        <div class="content">
+            <p class="elegant-text text-slide">Con la bendición de Dios y el amor que nos une,<br>
+            tenemos el honor de invitarles a celebrar</p>
+            <p class="elegant-text text-slide">nuestras Bodas de Plata</p>
+            
+            <img src="dyk1.jpeg" alt="Decoración" class="decoration-image image-scale">
+            
+            <div class="date-time fade-in">
+                <p>Sábado, 05 de Abril de 2025</p>
+                <p>Ceremonia: 7:00 horas</p>
+            </div>
+
+            <img src="dyk3.png" alt="Decoración" class="decoration-image image-scale">
+            
+            <div class="countdown fade-in">
+                <div class="countdown-separator"></div>
+                <div class="countdown-grid" id="countdown">
+                    <div class="countdown-item">
+                        <span class="countdown-number" id="days">00</span>
+                        <span class="countdown-label">días</span>
+                    </div>
+                    <div class="countdown-item">
+                        <span class="countdown-number" id="hours">00</span>
+                        <span class="countdown-label">horas</span>
+                    </div>
+                    <div class="countdown-item">
+                        <span class="countdown-number" id="minutes">00</span>
+                        <span class="countdown-label">minutos</span>
+                    </div>
+                    <div class="countdown-item">
+                        <span class="countdown-number" id="seconds">00</span>
+                        <span class="countdown-label">segundos</span>
+                    </div>
+                </div>
+                <div class="countdown-separator"></div>
+            </div>
+
+            <img src="dyk2.jpeg" alt="Decoración" class="decoration-image-bottom image-scale-up fade-in">
+            
+            <div class="details fade-in">
+                <p>Lugar de la ceremonia</p>
+                <p>¡Preparate!</p>
+                <p>¡Presiona el botón para saberlo!</p>
+            </div>
+            
+            <a href="https://maps.app.goo.gl/iAfpLh49kSi87RQs7?g_st=com.google.maps.preview.copy" class="location-btn fade-in">
+                Ver ubicación 📍
+            </a>
+        </div>
+    </div>
+
+    <script>
+        function updateCountdown() {
+            const eventDate = new Date('2025-04-05 07:00:00').getTime();
+            const now = new Date().getTime();
+            const distance = eventDate - now;
+            
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+            
+            document.getElementById('days').textContent = days.toString().padStart(2, '0');
+            document.getElementById('hours').textContent = hours.toString().padStart(2, '0');
+            document.getElementById('minutes').textContent = minutes.toString().padStart(2, '0');
+            document.getElementById('seconds').textContent = seconds.toString().padStart(2, '0');
+            
+            if (distance < 0) {
+                document.getElementById('countdown').innerHTML = "<div class='countdown-item'><span class='countdown-number'>¡El evento ha comenzado!</span></div>";
+            }
+        }
+        
+        function isElementInViewport(el) {
+            const rect = el.getBoundingClientRect();
+            return (
+                rect.top >= 0 &&
+                rect.left >= 0 &&
+                rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+                rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+            );
+        }
+
+        function handleScroll() {
+            const elements = document.querySelectorAll('.fade-in, .image-scale, .text-slide, .image-scale-up');
+            
+            elements.forEach(element => {
+                if (isElementInViewport(element)) {
+                    element.classList.add('visible');
+                }
+            });
+        }
+
+        setInterval(updateCountdown, 1000);
+        updateCountdown();
+        
+        window.addEventListener('scroll', handleScroll);
+        window.addEventListener('load', handleScroll);
+    </script>
+</body>
+</html>
