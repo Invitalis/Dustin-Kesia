@@ -89,7 +89,7 @@
             transform: translate(-50%, -50%);
             width: 450px;
             height: 450px;
-            opacity: 0.2;
+            opacity: 0.5;
             z-index: 1;
             object-fit: contain;
         }
@@ -108,9 +108,7 @@
         .name {
             font-family: 'Great Vibes', cursive;
             font-size: 60px;
-            background: linear-gradient(45deg, #808080, #C0C0C0);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
+            color: #808080;
             margin: 0;
             text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
             line-height: 1.2;
@@ -288,20 +286,24 @@
                 margin: 20px auto;
                 padding: 30px 15px;
                 width: 100%;
+                min-height: 250px;
             }
             
             .background-image {
                 width: 100%;
                 height: auto;
                 max-width: 300px;
+                opacity: 0.4;
             }
 
             .name {
                 font-size: 48px;
+                color: #666;
             }
             
             .name-separator {
                 font-size: 36px;
+                color: #808080;
             }
 
             .title {
