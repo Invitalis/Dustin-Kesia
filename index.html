@@ -133,6 +133,11 @@
             box-shadow: 0 4px 15px rgba(0,0,0,0.1);
         }
 
+        img[src="dyk3.png"] {
+            border-radius: 0;
+            box-shadow: none;
+        }
+
         .decoration-image-bottom {
             max-width: 280px;
             margin: 30px auto;
@@ -242,6 +247,7 @@
             font-weight: 300;
         }
 
+        /* Efectos de scroll */
         .fade-in {
             opacity: 0;
             transform: translateY(30px);
@@ -445,7 +451,4 @@
         }
 
         function handleScroll() {
-            const elements = document.querySelectorAll('.fade-in, .image-scale, .text-slide, .image-scale-up');
-            
-            elements.forEach(element => {
-                if (isElementInViewport(element
+            const elements = document.querySelectorAll('.fade-in, .image-scale, .
