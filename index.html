@@ -7,10 +7,13 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&family=Great+Vibes&family=Cormorant+Garamond:wght@400;600&display=swap" rel="stylesheet">
     <style>
         body {
+            background-image: url('dyk.png');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
             font-family: 'Cormorant Garamond', serif;
             margin: 0;
             padding: 0;
-            background: linear-gradient(135deg, #f5f5f5 0%, #e0e0e0 100%);
             min-height: 100vh;
             display: flex;
             align-items: center;
@@ -87,10 +90,8 @@
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
-            width: 100%;
-            height: auto;
-            max-width: 400px;
-            min-width: 400px;
+            width: 400px;
+            height: 400px;
             opacity: 0.2;
             z-index: 1;
             object-fit: contain;
@@ -126,25 +127,16 @@
         }
 
         .decoration-image {
-            max-width: 250px;
+            max-width: 180px;
             margin: 30px 0;
             opacity: 0.8;
-            border-radius: 15px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-        }
-
-        img[src="dyk3.png"] {
-            border-radius: 0;
-            box-shadow: none;
         }
 
         .decoration-image-bottom {
-            max-width: 280px;
+            max-width: 200px;
             margin: 30px auto;
             opacity: 0.8;
             display: block;
-            border-radius: 15px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
         }
 
         .countdown {
@@ -194,28 +186,26 @@
         }
         
         .location-btn {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            padding: 12px 25px;
-            background: #fff;
-            color: #666;
+            display: inline-block;
+            padding: 18px 45px;
+            background: linear-gradient(45deg, #A8A8A8, #C0C0C0);
+            color: white;
             text-decoration: none;
-            border-radius: 25px;
-            transition: all 0.3s ease;
-            font-size: 16px;
+            border-radius: 30px;
+            transition: all 0.4s ease;
+            font-size: 18px;
             margin-top: 30px;
-            border: 1px solid #ddd;
+            border: none;
             cursor: pointer;
             font-family: 'Montserrat', sans-serif;
             letter-spacing: 1px;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
         }
-
+        
         .location-btn:hover {
             transform: translateY(-2px);
-            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-            background: #f9f9f9;
+            box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+            background: linear-gradient(45deg, #909090, #A8A8A8);
         }
 
         .date-time {
@@ -247,7 +237,6 @@
             font-weight: 300;
         }
 
-        /* Efectos de scroll */
         .fade-in {
             opacity: 0;
             transform: translateY(30px);
@@ -409,8 +398,8 @@
             
             <div class="details fade-in">
                 <p>Lugar de la ceremonia</p>
-                <p>¡Prepárate!</p>
-                <p>¡Presiona el botón para saberlo!</p>
+                <p>Los Hostales Del IRTRA</p>
+                <p>CITO-180, Retalhuleu, Guatemala</p>
             </div>
             
             <a href="https://maps.app.goo.gl/iAfpLh49kSi87RQs7?g_st=com.google.maps.preview.copy" class="location-btn fade-in">
@@ -451,4 +440,19 @@
         }
 
         function handleScroll() {
-            const elements = document.querySelectorAll('.fade-in, .image-scale, .
+            const elements = document.querySelectorAll('.fade-in, .image-scale, .text-slide, .image-scale-up');
+            
+            elements.forEach(element => {
+                if (isElementInViewport(element)) {
+                    element.classList.add('visible');
+                }
+            });
+        }
+
+        setInterval(updateCountdown, 1000);
+        updateCountdown();
+        
+        window.addEventListener('scroll', handleScroll);
+        window.addEventListener('load', handleScroll);
+    </script>
+</body
