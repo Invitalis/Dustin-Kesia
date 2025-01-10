@@ -133,11 +133,6 @@
             box-shadow: 0 4px 15px rgba(0,0,0,0.1);
         }
 
-        img[src="dyk3.png"] {
-            border-radius: 0;
-            box-shadow: none;
-        }
-
         .decoration-image-bottom {
             max-width: 280px;
             margin: 30px auto;
@@ -300,8 +295,8 @@
             .names-container {
                 margin: 20px -15px;
                 padding: 30px 15px;
-                min-height: 250px;
                 width: calc(100% + 30px);
+                min-height: 250px;
             }
             
             .background-image {
@@ -408,7 +403,7 @@
             
             <div class="details fade-in">
                 <p>Lugar de la ceremonia</p>
-                <p>¡Preparate!</p>
+                <p>¡Prepárate!</p>
                 <p>¡Presiona el botón para saberlo!</p>
             </div>
             
@@ -451,3 +446,6 @@
 
         function handleScroll() {
             const elements = document.querySelectorAll('.fade-in, .image-scale, .text-slide, .image-scale-up');
+            
+            elements.forEach(element => {
+                if (isElementInViewport(element
