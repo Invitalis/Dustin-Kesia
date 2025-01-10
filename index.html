@@ -7,10 +7,10 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&family=Great+Vibes&family=Cormorant+Garamond:wght@400;600&display=swap" rel="stylesheet">
     <style>
         body {
+            background-color: #f5f5f5;
             font-family: 'Cormorant Garamond', serif;
             margin: 0;
             padding: 0;
-            background: linear-gradient(135deg, #f5f5f5 0%, #e0e0e0 100%);
             min-height: 100vh;
             display: flex;
             align-items: center;
@@ -22,7 +22,7 @@
             max-width: 600px;
             margin: 20px;
             padding: 60px 40px;
-            background-color: rgba(255, 255, 255, 0.95);
+            background-color: #ffffff;
             border-radius: 20px;
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
             text-align: center;
@@ -77,23 +77,9 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            min-height: 250px;
+            min-height: 200px;
             width: 100%;
-            max-width: 400px;
-        }
-
-        .background-image {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            width: 100%;
-            height: 100%;
-            max-width: 350px;
-            max-height: 350px;
-            opacity: 0.2;
-            z-index: 1;
-            object-fit: contain;
+            max-width: 500px;
         }
 
         .names-wrapper {
@@ -110,9 +96,7 @@
         .name {
             font-family: 'Great Vibes', cursive;
             font-size: 60px;
-            background: linear-gradient(45deg, #808080, #C0C0C0);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
+            color: #666666;
             margin: 0;
             text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
             line-height: 1.2;
@@ -121,7 +105,7 @@
         .name-separator {
             font-family: 'Great Vibes', cursive;
             font-size: 42px;
-            color: #C0C0C0;
+            color: #808080;
             margin: 5px 0;
         }
 
@@ -236,7 +220,6 @@
             font-weight: 300;
         }
 
-        /* Efectos de scroll */
         .fade-in {
             opacity: 0;
             transform: translateY(30px);
@@ -280,6 +263,59 @@
             opacity: 1;
             transform: scale(1) translateY(0);
         }
+
+        @media (max-width: 480px) {
+            .container {
+                margin: 10px;
+                padding: 20px 15px;
+            }
+            
+            .names-container {
+                margin: 20px auto;
+                padding: 30px 15px;
+                width: 100%;
+                min-height: 250px;
+            }
+
+            .name {
+                font-size: 48px;
+                color: #666666;
+            }
+            
+            .name-separator {
+                font-size: 36px;
+                color: #808080;
+            }
+
+            .title {
+                font-size: 40px;
+            }
+
+            .subtitle {
+                font-size: 18px;
+            }
+
+            .elegant-text {
+                font-size: 18px;
+            }
+
+            .date-time {
+                font-size: 20px;
+            }
+
+            .countdown-number {
+                font-size: 30px;
+            }
+
+            .countdown-label {
+                font-size: 10px;
+            }
+
+            .decoration-image,
+            .decoration-image-bottom {
+                max-width: 90%;
+            }
+        }
     </style>
 </head>
 <body>
@@ -291,11 +327,10 @@
             <p class="subtitle">CELEBRACIÓN DE 25 AÑOS DE AMOR</p>
             
             <div class="names-container fade-in">
-                <img src="dyk.png" alt="Fondo" class="background-image image-scale">
                 <div class="names-wrapper">
-                    <span class="name">María</span>
+                    <span class="name">Kesia</span>
                     <span class="name-separator">&</span>
-                    <span class="name">José</span>
+                    <span class="name">Dustin</span>
                 </div>
             </div>
         </div>
@@ -308,11 +343,11 @@
             <img src="dyk1.jpeg" alt="Decoración" class="decoration-image image-scale">
             
             <div class="date-time fade-in">
-                <p>Sábado, 25 de Enero de 2025</p>
-                <p>Ceremonia: 18:00 horas</p>
+                <p>Sábado, 05 de Abril de 2025</p>
+                <p>Ceremonia: 7:00 horas</p>
             </div>
 
-            <img src="dyk3.jpg" alt="Decoración" class="decoration-image image-scale">
+            <img src="dyk3.png" alt="Decoración" class="decoration-image image-scale">
             
             <div class="countdown fade-in">
                 <div class="countdown-separator"></div>
@@ -345,7 +380,7 @@
                 <p>CITO-180, Retalhuleu, Guatemala</p>
             </div>
             
-            <a href="https://maps.app.goo.gl/Los-Hostales-IRTRA" class="location-btn fade-in">
+            <a href="https://maps.app.goo.gl/iAfpLh49kSi87RQs7?g_st=com.google.maps.preview.copy" class="location-btn fade-in">
                 Ver ubicación 📍
             </a>
         </div>
@@ -353,7 +388,7 @@
 
     <script>
         function updateCountdown() {
-            const eventDate = new Date('2025-01-25 18:00:00').getTime();
+            const eventDate = new Date('2025-04-05 07:00:00').getTime();
             const now = new Date().getTime();
             const distance = eventDate - now;
             
